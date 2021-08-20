@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: sk85org/JgvXwJwEGl
+        uses: sk85org/JgvXwJwEGl@v1
         with:
           who-to-greet: 'Mona the Octocat'
       # `hello` ステップからの出力を使用する
