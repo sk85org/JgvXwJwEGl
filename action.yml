@@ -7,9 +7,8 @@ inputs:
     required: true
     default: 'World'
 outputs:
-  time2: # id of output
+  time: # id of output
     description: 'The time we greeted you'
-    value: '99999999999999999999'
 runs:
   using: 'docker'
   image: 'Dockerfile'
