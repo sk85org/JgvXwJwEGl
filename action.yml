@@ -9,6 +9,7 @@ inputs:
 outputs:
   time2: # id of output
     description: 'The time we greeted you'
+    default: '99999999999999999999'
 runs:
   using: 'docker'
   image: 'Dockerfile'
