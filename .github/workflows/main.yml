@@ -14,7 +14,7 @@ jobs:
           ls
       - uses: "finnp/create-file-action@master"
         env:
-          FILE_NAME: ${{date "+%Y%m%d-%s"$RANDOM$RANDOM.md}}
+          FILE_NAME: "${{date "+%Y%m%d-%s"$RANDOM$RANDOM.md}}"
           FILE_DATA: "file content"
       - name: Commit report
         run: |
