@@ -9,7 +9,7 @@ jobs:
         run: |
           pwd
           filename=`date "+%Y%m%d-%s"$RANDOM$RANDOM.md`
-          date +%s > ~/content/$filename
+          date +%s > content/$filename
           ls
       - name: Commit report
         run: |
