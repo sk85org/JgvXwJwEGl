@@ -6,7 +6,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Create report file
-        run: date +%s > report.txt
+        run: |
+          filename=`date "+%Y%m%d-%s"$RANDOM$RANDOM.md`
+          date +%s > $filename
       - name: Commit report
         run: |
           git config --global user.name 'Your Name'
