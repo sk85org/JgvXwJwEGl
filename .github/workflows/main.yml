@@ -13,7 +13,7 @@ jobs:
           ls
       - uses: "finnp/create-file-action@master"
         env:
-          FILE_NAME: "fileName.txt"
+          FILE_NAME: $filename
           FILE_DATA: "file content"
       - name: Commit report
         run: |
