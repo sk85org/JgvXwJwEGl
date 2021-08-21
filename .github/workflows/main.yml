@@ -7,11 +7,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Create report file
         run: |
-          pip list
-          pwd
-          filename=`date "+%Y%m%d-%s"$RANDOM$RANDOM.md`
-          date +%s > content/$filename
-          ls
+          python md.py
       - name: Commit report
         run: |
           ls
