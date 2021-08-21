@@ -1,7 +1,7 @@
 name: Push commit
 on: 
   schedule:
-    - cron:  '55 22 * * *'
+    - cron:  '30 23 * * *'
 jobs:
   report:
     runs-on: ubuntu-latest
@@ -9,6 +9,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Create report file
         run: |
+          date
           python md.py
       - name: Commit report
         run: |
