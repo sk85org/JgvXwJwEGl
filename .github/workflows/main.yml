@@ -1,5 +1,5 @@
 name: Push commit
-on: pull
+on: push
 jobs:
   report:
     runs-on: ubuntu-latest
