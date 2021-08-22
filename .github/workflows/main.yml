@@ -1,4 +1,4 @@
-name: Push commit
+name: Daily Automated File Creation
 on: 
   push:
   schedule:
@@ -8,17 +8,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Create report file
+      - name: Create File
         run: |
           date
           sudo timedatectl set-timezone Asia/Tokyo
           date
-          python md.py
-      - name: Commit report
+          python github_actions/md_creation.py
+      - name: Commit File
         run: |
           ls
-          git config --global user.name 'Your Name'
-          git config --global user.email 'your-username@users.noreply.github.com'
+          git config --global user.name 'Github Actions'
+          git config --global user.email 'GithubActions@github.com'
           git add .
-          git commit -am "Automated report"
+          git commit -am "Created by Github Actions"
           git push
