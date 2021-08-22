@@ -11,7 +11,7 @@ jobs:
       - name: Create report file
         run: |
           date
-          timedatectl set-timezone Asia/Tokyo
+          sudo timedatectl set-timezone Asia/Tokyo
           date
           python md.py
       - name: Commit report
