@@ -1,8 +1,9 @@
 import os
-import json, html, re
 from jinja2 import Environment, FileSystemLoader
 import datetime
 import random
+
+print(datetime.datetime.now())
 
 env = Environment(loader=FileSystemLoader('./', encoding='utf8'))
 md_tmpl = env.get_template('template.md')
@@ -10,7 +11,7 @@ md_tmpl = env.get_template('template.md')
 md_summary_file_path = "content/posts"
 
 today = datetime.datetime.today()
-print(datetime.datetime.now())
+
 slug_string = str(random.randint(10000, 1000000))
 
 
