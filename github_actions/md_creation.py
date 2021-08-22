@@ -5,7 +5,7 @@ import random
 
 print(datetime.datetime.now())
 
-env = Environment(loader=FileSystemLoader('./', encoding='utf8'))
+env = Environment(loader=FileSystemLoader(path.dirname(__file__), encoding='utf8'))
 md_tmpl = env.get_template('template.md')
 
 md_summary_file_path = "content/posts"
