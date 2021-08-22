@@ -1,5 +1,6 @@
 name: Push commit
 on: 
+  push:
   schedule:
     - cron:  '30 23 * * *'
 jobs:
@@ -9,6 +10,8 @@ jobs:
       - uses: actions/checkout@v2
       - name: Create report file
         run: |
+          date
+          timedatectl set-timezone Asia/Tokyo
           date
           python md.py
       - name: Commit report
