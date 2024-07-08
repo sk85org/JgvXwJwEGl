@@ -12,8 +12,10 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: '20'
+    - name: Install dependence
+      run: npm install         
     - name: Install Playwright
-      run: npx playwright install --with-deps
+      run: npm i playwright
     - name: Run Playwright script
       run: node script.js
     - name: Upload screenshot as artifact
