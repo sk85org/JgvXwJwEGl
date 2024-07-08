@@ -10,7 +10,7 @@ const { chromium } = require('playwright'); // Playwrightモジュールをイ�
   // Googleのホームページにアクセス
   await page.goto('https://www.google.com');
   // スクリーンショットを保存
-  await page.screenshot({ path: '/google_screenshot.png' });
+  await page.screenshot({ path: 'google_screenshot.png' });
   // ブラウザを閉じる
   await browser.close();
 })();
