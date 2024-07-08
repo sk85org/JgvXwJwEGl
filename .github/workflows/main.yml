@@ -17,9 +17,11 @@ jobs:
     - name: Install Playwright
       run: npx playwright install   
     - name: Run Playwright script
-      run: node ./script.js
+      run: |
+        node ./script.js
+        echo hello > world.txt
     - name: Upload screenshot as artifact
       uses: actions/upload-artifact@v4
       with:
         name: screenshot
-        path: ./google_screenshot.png'
+        path: ./google_screenshot.png
