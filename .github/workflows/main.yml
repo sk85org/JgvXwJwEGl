@@ -15,7 +15,7 @@ jobs:
     - name: Install dependence
       run: npm install         
     - name: Install Playwright
-      run: npm i playwright
+      run: npx playwright install   
     - name: Run Playwright script
       run: node script.js
     - name: Upload screenshot as artifact
