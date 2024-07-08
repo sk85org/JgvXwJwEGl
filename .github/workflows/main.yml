@@ -1,24 +1,25 @@
-name: Daily Automated File Creation
-on: 
-  push:
-  schedule:
-    - cron:  '30 23 * * *'
+name: Run Playwright Script Manually
+
+on:
+  workflow_dispatch:
+
 jobs:
-  report:
+  run-playwright:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Create File
-        run: |
-          date
-          sudo timedatectl set-timezone Asia/Tokyo
-          date
-          python github_actions/md_creation.py
-      - name: Commit File
-        run: |
-          ls
-          git config --global user.name 'Github Actions'
-          git config --global user.email 'GithubActions@github.com'
-          git add .
-          git commit -am "Created by Github Actions"
-          git push
+    - uses: actions/checkout@v2
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+    - name: Install dependencies
+      run: npm install
+    - name: Install Playwright
+      run: npm install playwright
+    - name: Run Playwright script
+      run: node script.ts
+    - name: Upload screenshot as artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: screenshot
+        path: data/example.png
