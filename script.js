@@ -1,7 +1,7 @@
-const { webkit, devices } = require('playwright');
+const { chromium } = require('playwright'); 
 
 (async () => {
-  const browser = await webkit.launch(); // or 'firefox','chromium'
+  const browser = await chromium.launch(); 
   const url = 'https://ssnb.x.moneyforward.com/users/sign_in'
   const context = await browser.newContext({
     
