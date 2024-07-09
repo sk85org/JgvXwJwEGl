@@ -2,7 +2,7 @@ const { webkit, devices } = require('playwright');
 
 (async () => {
   const browser = await webkit.launch(); // or 'firefox','chromium'
-  const url = 'https://www.ugtop.com/spill.shtml'
+  const url = 'https://ssnb.x.moneyforward.com/users/sign_in'
   const context = await browser.newContext({
     
     locale: 'ja'
