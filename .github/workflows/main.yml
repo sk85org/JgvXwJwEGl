@@ -6,15 +6,7 @@ on:
 jobs:
   run-playwright:
     runs-on: ubuntu-latest
-    steps:
-    - name: Connect Tailscale
-      uses: tailscale/github-action@v2
-      with:
-        oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
-        oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
-        tags: tag:example
-        args: --exit-node 100.118.162.118
-      
+    steps:      
     - uses: actions/checkout@v4
     - name: Set up Node.js
       uses: actions/setup-node@v4
@@ -23,7 +15,14 @@ jobs:
     - name: Install dependence
       run: npm install         
     - name: Install Playwright
-      run: npx playwright install   
+      run: npx playwright install
+    - name: Connect Tailscale
+      uses: tailscale/github-action@v2
+      with:
+        oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
+        oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
+        tags: tag:example
+        args: --exit-node 100.118.162.118
     - name: Run Playwright script
       run: node ./script.js
       env:
