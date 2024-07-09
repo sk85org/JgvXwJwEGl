@@ -1,7 +1,7 @@
-const { chromium, devices } = require('playwright');
+const { webkit, devices } = require('playwright');
 
 (async () => {
-  const browser = await chromium.launch(); // or 'firefox','chromium'
+  const browser = await webkit.launch(); // or 'firefox','chromium'
   const url = 'https://www.ugtop.com/spill.shtml'
   const context = await browser.newContext({
     
