@@ -2,7 +2,7 @@ const { chromium } = require('playwright');
 
 (async () => {
   const browser = await chromium.launch(); 
-  const url = 'https://ssnb.x.moneyforward.com/users/sign_in'
+  const url = 'https://ssnb.x.moneyforward.com'
   const context = await browser.newContext({
     
     locale: 'ja'
