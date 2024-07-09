@@ -15,7 +15,7 @@ jobs:
     - name: Install dependence
       run: npm install         
     - name: Install Playwright
-      run: npx playwright install
+      run: npx playwright install --with-deps
     - name: Connect Tailscale
       uses: tailscale/github-action@v2
       with:
