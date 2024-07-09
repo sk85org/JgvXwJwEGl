@@ -12,6 +12,7 @@ const { webkit, devices } = require('playwright');
   
   await page.fill('#sign_in_session_service_email', process.env.EMAIL);
   await page.fill('#sign_in_session_service_password', process.env.PASSWORD);
+  await page.click('#login-btn-sumit');
   await page.screenshot({ path: 'example.png' });
   
   
