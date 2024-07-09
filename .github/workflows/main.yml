@@ -7,6 +7,13 @@ jobs:
   run-playwright:
     runs-on: ubuntu-latest
     steps:
+    - name: Connect Tailscale
+      uses: tailscale/github-action@v2
+      with:
+        oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
+        oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
+        tags: tag:ci
+      
     - uses: actions/checkout@v4
     - name: Set up Node.js
       uses: actions/setup-node@v4
