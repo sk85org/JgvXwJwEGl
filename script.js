@@ -13,7 +13,9 @@ const { webkit, devices } = require('playwright');
   await page.fill('#sign_in_session_service_email', process.env.EMAIL);
   await page.fill('#sign_in_session_service_password', process.env.PASSWORD);
   await page.click('#login-btn-sumit');
-  await page.screenshot({ path: 'example.png' });
+  await page.locator('.not-now').first().click();
+  await page.locator('a:has-text("口座")').click();
+  //await page.screenshot({ path: 'example.png' });
   
   
   await browser.close();
