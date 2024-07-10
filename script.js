@@ -23,6 +23,7 @@ const { webkit, devices } = require('playwright');
 
   for (let i = 0; i < buttonCount; i++) {
     await buttons.nth(i).click();
+    console.log(i);
   }
 
   //await page.screenshot({ path: 'example.png' });
