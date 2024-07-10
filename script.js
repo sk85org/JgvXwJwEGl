@@ -15,6 +15,16 @@ const { webkit, devices } = require('playwright');
   await page.click('#login-btn-sumit');
   await page.locator('.not-now').first().click();
   await page.locator('a:has-text("口座")').click();
+  await page.waitForSelector('.ga-refresh-account-button')
+  const buttons = page.locator('.ga-refresh-account-button');
+  const buttonCount = await buttons.count();
+  console.log(buttonCount);
+  
+
+  for (let i = 0; i < buttonCount; i++) {
+    await buttons.nth(i).click();
+  }
+
   //await page.screenshot({ path: 'example.png' });
   
   
